@@ -25,6 +25,7 @@
 }
 #pragma mark - Init UI
 - (void)modifyCustomNav{
+    self.customNav.backButton.hidden = YES;
     [self.customNav setNavTitle:@"发现"];
 }
 - (void)buttonCreate
