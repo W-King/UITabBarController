@@ -1,14 +1,15 @@
 //
 //  LoginTool.m
-//  BigSport
+//  PPX_Tabbar
 //
-//  Created by 刘凡 on 16/4/11.
-//  Copyright © 2016年 iCHSY. All rights reserved.
+//  Created by pipixia on 2016/11/2.
+//  Copyright © 2016年 pipixia. All rights reserved.
 //
 
 #import "LoginServiceTool.h"
 #import "BaseNav.h"
-#import "UserInfoTool.h"
+static int i = 2;//判断是否登录
+
 @implementation LoginServiceTool
 
 + (void)presentLoginViewControllerWihtViewController:(UIViewController*)viewController loginResult:(void(^)(BOOL isLogin))result
@@ -21,7 +22,7 @@
 
 + (void)needLoginServiceViewController:(id)controller selector:(SEL)selector
 {
-    if ([UserInfoTool isLogin])
+    if (i == 1)
     {
         [self viewController:controller selector:selector];
     }
@@ -38,7 +39,7 @@
 
 + (void)needLoginServiceViewController:(id)controller selector:(SEL)selector withObject:(id)object;
 {
-    if ([UserInfoTool isLogin])
+    if (i == 1)
     {
         [self viewController:controller selector:selector withObject:object];
     }
